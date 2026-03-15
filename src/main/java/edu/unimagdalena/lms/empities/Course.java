@@ -19,7 +19,7 @@ import java.util.UUID;
 public class Course {
     @Id
     @GeneratedValue (strategy = GenerationType.UUID)
-    private UUID Id;
+    private UUID id;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "instructor_id", nullable = false)

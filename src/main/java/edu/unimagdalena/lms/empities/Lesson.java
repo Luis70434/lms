@@ -17,7 +17,7 @@ import java.util.UUID;
 public class Lesson {
     @Id
     @GeneratedValue (strategy = GenerationType.UUID)
-    private UUID Id;
+    private UUID id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "course_id", nullable = false)
