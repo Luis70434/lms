@@ -9,7 +9,7 @@ import java.util.UUID;
 
 public interface StudentRepository extends JpaRepository<Student, UUID> {
     @Query("""
-    SELECT s
+    SELECT DISTINCT s
     FROM Student s
     JOIN s.enrollments e
     WHERE e.course.id = :courseId

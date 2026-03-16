@@ -28,10 +28,10 @@ public class Instructor {
     @Column(name = "full_name", nullable = false)
     private String fullName;
 
-    @Column(nullable = false, updatable = false)
+    @Column(name = "created_at", nullable = false, updatable = false)
     private Instant createdAt;
 
-    @Column(nullable = false)
+    @Column(name = "updated_at", nullable = false)
     private Instant updatedAt;
 
     @OneToMany(mappedBy = "instructor",fetch = FetchType.LAZY)
