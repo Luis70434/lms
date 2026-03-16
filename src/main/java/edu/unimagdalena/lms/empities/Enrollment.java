@@ -1,11 +1,8 @@
 package edu.unimagdalena.lms.empities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
+import lombok.*;
 import java.time.Instant;
 import java.util.UUID;
 
@@ -15,6 +12,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Entity
 @Table(name = "enrollments")
+@Builder
 public class Enrollment {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

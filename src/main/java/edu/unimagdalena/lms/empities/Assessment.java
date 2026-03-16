@@ -15,7 +15,6 @@ import java.util.UUID;
 @NoArgsConstructor
 @Entity
 
-
 public class Assessment {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
