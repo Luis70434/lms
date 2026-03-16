@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
-//
+
 
 @DataJpaTest
 @Testcontainers
@@ -41,6 +41,7 @@ public class InstructorRepositoryTest{
     @Autowired
     private InstructorRepository instructorRepository;
 
+
     private Instructor createInstructor(String email, String fullName) {
         Instructor instructor = new Instructor();
         instructor.setEmail(email);
@@ -50,6 +51,7 @@ public class InstructorRepositoryTest{
         return instructor;
     }
 
+    //CREATE
     @Test
     @DisplayName("Debe guardar un instructor")
     void shouldSaveInstructor() {
@@ -63,6 +65,7 @@ public class InstructorRepositoryTest{
         assertEquals("Juan Perez", saved.getFullName());
     }
 
+    //READ
     @Test
     @DisplayName("Debe buscar un instructor por id")
     void shouldFindInstructorById() {
@@ -89,7 +92,7 @@ public class InstructorRepositoryTest{
 
         assertEquals(2, result.size());
     }
-
+    //UPDATE
     @Test
     @DisplayName("Debe actualizar un instructor")
     void shouldUpdateInstructor() {
@@ -106,7 +109,7 @@ public class InstructorRepositoryTest{
         assertEquals("nuevo@correo.com", updated.getEmail());
         assertEquals("Nombre Nuevo", updated.getFullName());
     }
-
+    //DELETE
     @Test
     @DisplayName("Debe eliminar un instructor")
     void shouldDeleteInstructor() {
