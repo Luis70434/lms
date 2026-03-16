@@ -1,11 +1,8 @@
-package edu.unimagdalena.lms.empities;
+package edu.unimagdalena.lms.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
+import lombok.*;
 import java.time.Instant;
 import java.util.Set;
 import java.util.UUID;
@@ -13,11 +10,12 @@ import java.util.UUID;
 @Setter
 @Getter
 @Entity
-@AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "instructors")
+@AllArgsConstructor
+@Builder
+@Table(name = "students")
 
-public class Instructor {
+public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
@@ -31,12 +29,14 @@ public class Instructor {
     @Column(name = "created_at", nullable = false, updatable = false)
     private Instant createdAt;
 
-    @Column(name = "updated_at", nullable = false)
+    @Column(name = "updated_at")
     private Instant updatedAt;
 
-    @OneToMany(mappedBy = "instructor",fetch = FetchType.LAZY)
-    private Set<Course> courses;
+    @OneToMany(mappedBy = "student",fetch = FetchType.LAZY)
+    private Set<Assessment> assessments;
 
-    @OneToOne(mappedBy = "instructor", fetch = FetchType.EAGER)
-    private InstructorProfile profile;
+    @OneToMany(mappedBy = "student", fetch = FetchType.LAZY)
+    private Set<Enrollment> enrollments;
+
+
 }

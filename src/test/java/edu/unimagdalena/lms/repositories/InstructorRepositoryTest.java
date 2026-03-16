@@ -1,6 +1,6 @@
 package edu.unimagdalena.lms.repositories;
 
-import edu.unimagdalena.lms.empities.Instructor;
+import edu.unimagdalena.lms.entities.Instructor;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

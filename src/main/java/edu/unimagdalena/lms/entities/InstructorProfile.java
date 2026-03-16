@@ -1,4 +1,4 @@
-package edu.unimagdalena.lms.empities;
+package edu.unimagdalena.lms.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
