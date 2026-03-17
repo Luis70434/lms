@@ -34,7 +34,7 @@ public class Assessment {
     @Column(nullable = false)
     private Integer score;
 
-    @Column(name = "taken_at", nullable = true)
+    @Column(name = "taken_at", nullable = false)
     private Instant takenAt;
 
 
