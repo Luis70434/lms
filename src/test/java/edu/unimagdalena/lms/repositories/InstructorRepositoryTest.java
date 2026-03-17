@@ -24,7 +24,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @DataJpaTest
 @Testcontainers
-@EntityScan(basePackages = "edu.unimagdalena.lms.empities")
+@EntityScan(basePackages = "edu.unimagdalena.lms.entities")
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @TestPropertySource(properties = {
         "spring.jpa.hibernate.ddl-auto=create-drop",
